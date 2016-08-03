@@ -1,0 +1,15 @@
+---
+- hosts: boxes
+  become: yes
+  tasks:
+# - name: How to see stdout of ansible commands
+#   shell: whoami
+#   register: out
+# - debug: var=out.stdout_lines
+   - name: Install list of packages
+     apt: name={{item}} state=installed
+     with_items:
+          - auditd
+          - fail2ban
+          - rkhunter
+          - chkrootkit  
