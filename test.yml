@@ -9,3 +9,4 @@
           - fail2ban
           - rkhunter
           - chkrootkit  
+          #/home/crobinson/tmp
