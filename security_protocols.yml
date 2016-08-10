@@ -1,0 +1,11 @@
+---
+- hosts: lbox
+  become: yes
+  tasks:
+   - name: Install list of packages
+     apt: name={{item}} state=installed
+     with_items:
+        - auditd
+        - fail2ban
+        - rkhunter
+        - chkrootkit
