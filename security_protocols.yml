@@ -9,3 +9,16 @@
         - fail2ban
         - rkhunter
         - chkrootkit
+   - name: Copy Fail2ban config to remote host
+     copy: src=/etc/fail2ban/jail.local dest=/etc/fail2ban/jail.local follow=true
+   - name: Copy chkrootkit config files
+     copy: src=/etc/chkrootkit.conf dest=/etc/
+   - name: Copy over rkhunter's config files
+     copy: src=/etc/cron.daily/rkhunter dest=/etc/cron.daily
+   - name: Copy over rkhunter cron jobs
+     copy: src=/etc/cron.daily/rkhunter-cron.sh dest=/etc/cron.daily
+ # - name: Copy over Audit custom configs (per use case):
+ #   copy: src=     dest=
+   - file: path=/etc/cron.daily/rkhunter-cron.sh state=touch mode=a+x
+   - script: /home/crobinson/Desktop/script/Setup-audit.sh
+#You can specify the path of the script above ^^^
