@@ -1,0 +1,25 @@
+[DEFAULT]
+ignoreip = 127.0.0.1/8 10.0.0.0/8
+bantime  = 600
+findtime = 600
+maxretry = 3
+backend = auto
+usedns = warn
+destemail = carter.robinson@clearcapital.com
+sendername = Fail2Ban
+
+#
+# ACTIONS
+#
+banaction = iptables-multiport
+mta = sendmail
+protocol = tcp
+chain = INPUT
+
+[ssh]
+
+enabled  = true
+port     = ssh
+filter   = sshd
+logpath  = /var/log/auth.log
+maxretry = 2
