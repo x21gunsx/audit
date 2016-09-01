@@ -12,4 +12,5 @@ It will setup local config files for each of the packages
 via cron jobs or local configs
 Chkrootkit and Rkhunter are scheduled to run
 There are two host files one thats from the /etc/ansible and then one from the /etc (local hosts)
+You can also see that after executing the command "aulast --bad" that the bad attempts via SSH were logged by Auditdaemon. 
 Then lastly you can see the Kali Linux machine that was Pen tested as banned from the local virtual machine after it tried to bruteforce its way in via HYRDA GTK.
